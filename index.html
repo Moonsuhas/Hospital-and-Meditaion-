@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Medication Reminder</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="app.js"></script>
+
+</head>
+<body>
+	<h1 class="main">Medication Reminder</h1>
+	<p>Please enter your medication schedule:</p>
+	<form>
+		<label for="medication">Medication:</label>
+		<input type="text" id="medication" name="medication"><br><br>
+		<label for="time">Time:</label>
+		<input type="time" id="time" name="time"><br><br>
+		<input type="submit" value="Submit">
+	</form>
+	
+<hr>
+	<form>
+		<h1 class="main"> Hospital_Appointment</h1>
+		<label for="Paitent_Name">Paitent_Name:</label>
+		<input type="text" id="Paitent_Name" name="Paitent_Name"><br><br>
+		<label for="time">Time:</label>
+		<input type="time" id="time" name="time"><br><br>
+		<input type="submit" value="Submit">
+	</form>
+<hr>
+	<form>
+		<h1 class="main"> Free Checkup For Old People</h1>
+		<label for="Paitent_Name">Paitent_Name:</label>
+		<input type="text" id="Paitent_Name" name="Paitent_Name"><br><br>
+		<label for="time">Time:</label>
+		<input type="time" id="time" name="time"><br><br>
+		<input type="submit" value="Submit">
+	</form>
+
+	<script>
+		// First form
+		const form1 = document.querySelectorAll('form')[0];
+		const submitButton1 = form1.querySelector('input[type="submit"]');
+		submitButton1.addEventListener('click', (event) => {
+		  event.preventDefault();
+		  const medication = form1.elements.medication.value;
+		  const time = form1.elements.time.value;
+		  if (medication && time) {
+			alert(`Your medication ${medication} has been scheduled for ${time}.`);
+			form1.reset();
+		  } else {
+			alert('Please fill out all fields.');
+		  }
+		});
+	  
+		// Second form
+		const form2 = document.querySelectorAll('form')[1];
+		const submitButton2 = form2.querySelector('input[type="submit"]');
+		submitButton2.addEventListener('click', (event) => {
+		  event.preventDefault();
+		  const paitentName = form2.elements.Paitent_Name.value;
+		  const time = form2.elements.time.value;
+		  if (paitentName && time) {
+			alert(`Thank you, ${paitentName}! Your appointment has been scheduled for ${time}.`);
+			form2.reset();
+		  } else {
+			alert('Please fill out all fields.');
+		  }
+		});
+	  
+		// Third form
+		const form3 = document.querySelectorAll('form')[2];
+		const submitButton3 = form3.querySelector('input[type="submit"]');
+		submitButton3.addEventListener('click', (event) => {
+		  event.preventDefault();
+		  const paitentName = form3.elements.Paitent_Name.value;
+		  const time = form3.elements.time.value;
+		  if (paitentName && time) {
+			alert(`Thank you, ${paitentName}! Your checkup has been scheduled for ${time}.`);
+			form3.reset();
+		  } else {
+			alert('Please fill out all fields.');
+		  }
+		});
+	  </script>
+	  
+
+	
+</body>
+</html>
